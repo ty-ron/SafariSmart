@@ -5,17 +5,20 @@ import android.content.Context
 import com.safarismart.app.data.local.AppDatabase
 import com.safarismart.app.data.prefs.BudgetStore
 import com.safarismart.app.data.repository.TripRepository
+import com.safarismart.app.worker.ReminderScheduler
 
 class SafariSmartApp : Application() {
+
     lateinit var container: AppContainer
         private set
 
     override fun onCreate() {
         super.onCreate()
         container = AppContainer(this)
-        // Member 6 adds: ReminderScheduler.schedule(this)
+        ReminderScheduler.schedule(this)
     }
 }
+
 
 /** Creates the long-lived objects once (simple manual dependency injection). */
 class AppContainer(context: Context) {

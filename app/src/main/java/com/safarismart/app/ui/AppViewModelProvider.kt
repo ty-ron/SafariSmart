@@ -7,6 +7,9 @@ import androidx.lifecycle.viewmodel.viewModelFactory
 import com.safarismart.app.SafariSmartApp
 import com.safarismart.app.ui.screens.dashboard.DashboardViewModel
 import com.safarismart.app.ui.screens.trips.TripsViewModel
+import androidx.lifecycle.createSavedStateHandle
+import com.safarismart.app.ui.screens.addedit.AddEditViewModel
+import com.safarismart.app.ui.screens.insights.InsightsViewModel
 
 /** One factory for every ViewModel, so screens just write viewModel(factory = AppViewModelProvider.Factory). */
 object AppViewModelProvider {
@@ -18,8 +21,18 @@ object AppViewModelProvider {
                 safariApp().container.budgetStore
             )
         }
-        // Member 5 adds the AddEditViewModel initializer here
-        // Member 6 adds the InsightsViewModel initializer here
+        initializer {
+            AddEditViewModel(
+                this.createSavedStateHandle(),
+                safariApp().container.tripRepository
+            )
+        }
+        initializer {
+            InsightsViewModel(
+                safariApp().container.tripRepository,
+                safariApp().container.budgetStore
+            )
+        }
     }
 }
 
