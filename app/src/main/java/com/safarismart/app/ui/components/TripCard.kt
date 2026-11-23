@@ -18,7 +18,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.safarismart.app.data.local.Trip
 import com.safarismart.app.domain.util.DateUtils
-import com.safarismart.app.domain.util.tokes
+import com.safarismart.app.domain.util.toKes
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -36,7 +36,7 @@ fun TripCard(trip: Trip, onClick: () -> Unit, modifier: Modifier = Modifier) {
                     modifier = Modifier.weight(1f)
                 )
                 Text(
-                    trip.fare.tokes(),
+                    trip.fare.toKes(),
                     style = MaterialTheme.typography.titleMedium,
                     color = MaterialTheme.colorScheme.primary
                 )
