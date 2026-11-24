@@ -6,7 +6,7 @@ import com.safarismart.app.domain.util.DateUtils
 import kotlinx.coroutines.flow.Flow
 
 /**
- * Single source of truth for trip data. ViewModels only know this class,
+ * Single source of truth for trip data. ViewModels only know this class,due to the workmanager
  * so the storage details (Room) stay hidden from the UI layer.
  */
 class TripRepository(private val dao: TripDao) {
