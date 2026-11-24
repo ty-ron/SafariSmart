@@ -14,8 +14,7 @@ import kotlinx.coroutines.flow.map
 private val Context.dataStore: DataStore<Preferences> by
 preferencesDataStore(name = "safarismart_prefs")
 
-/** Stores the user's weekly fare budget. Survives app restarts and works offline hence there is no
- * for internet. */
+/** Stores the user's weekly fare budget. Survives app restarts and works offline. */
 class BudgetStore(private val context: Context) {
 
     private val budgetKey = doublePreferencesKey("weekly_budget")

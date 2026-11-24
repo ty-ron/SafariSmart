@@ -6,12 +6,12 @@ import com.safarismart.app.domain.util.DateUtils
 import kotlinx.coroutines.flow.Flow
 
 /**
- * Single source of truth for trip data. ViewModels only know this class,due to the workmanager
+ * Single source of truth for trip data. ViewModels only know this class,
  * so the storage details (Room) stay hidden from the UI layer.
  */
 class TripRepository(private val dao: TripDao) {
 
-    /** All trips, newest first. Updates automatically when the table changes. */
+    /** All trips, newest first. Updates automatically when the table changes through room. */
     val trips: Flow<List<Trip>> = dao.observeAll()
 
     /** Total fare for the current Monday-to-Sunday week (bounds are fixed when called). */
