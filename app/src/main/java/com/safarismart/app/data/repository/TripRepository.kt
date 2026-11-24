@@ -11,7 +11,7 @@ import kotlinx.coroutines.flow.Flow
  */
 class TripRepository(private val dao: TripDao) {
 
-    /** All trips, newest first. Updates automatically when the table changes. */
+    /** All trips, newest first. Updates automatically when the table changes through room. */
     val trips: Flow<List<Trip>> = dao.observeAll()
 
     /** Total fare for the current Monday-to-Sunday week (bounds are fixed when called). */
