@@ -4,6 +4,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.List
 import androidx.compose.material.icons.filled.BarChart
 import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
@@ -17,7 +18,8 @@ data class BottomItem(val route: String, val label: String, val icon: ImageVecto
 val bottomItems = listOf(
     BottomItem(Routes.DASHBOARD, "Home", Icons.Filled.Home),
     BottomItem(Routes.TRIPS, "Trips", Icons.AutoMirrored.Filled.List),
-    BottomItem(Routes.INSIGHTS, "Insights", Icons.Filled.BarChart)
+    BottomItem(Routes.INSIGHTS, "Insights", Icons.Filled.BarChart),
+    BottomItem(Routes.SETTINGS, "Settings", Icons.Filled.Settings)
 )
 
 @Composable

@@ -5,7 +5,8 @@ object Routes {
     const val DASHBOARD = "dashboard"
     const val TRIPS = "trips"
     const val INSIGHTS = "insights"
+    const val SETTINGS = "settings"
     const val ADD_EDIT = "add_edit/{tripId}"   // tripId = -1 means "add new"
 
-fun addEdit(tripId: Int = -1) = "add_edit/$tripId"
+    fun addEdit(tripId: Int = -1) = "add_edit/$tripId"
 }

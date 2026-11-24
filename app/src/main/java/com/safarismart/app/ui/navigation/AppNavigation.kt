@@ -13,6 +13,7 @@ import androidx.navigation.navArgument
 import com.safarismart.app.ui.screens.addedit.AddEditTripScreen
 import com.safarismart.app.ui.screens.dashboard.DashboardScreen
 import com.safarismart.app.ui.screens.insights.InsightsScreen
+import com.safarismart.app.ui.screens.settings.SettingsScreen
 import com.safarismart.app.ui.screens.splash.SplashScreen
 import com.safarismart.app.ui.screens.trips.TripsScreen
 
@@ -23,7 +24,7 @@ fun AppNavigation() {
     val tabRoutes = bottomItems.map { it.route }
 
     Scaffold(
-        // The bottom bar only shows on the three main tabs
+        // The bottom bar only shows on the main tabs
         bottomBar = { if (currentRoute in tabRoutes) SafariBottomBar(navController, currentRoute) }
     ) { padding ->
         NavHost(
@@ -49,6 +50,7 @@ fun AppNavigation() {
                 )
             }
             composable(Routes.INSIGHTS) { InsightsScreen() }
+            composable(Routes.SETTINGS) { SettingsScreen() }
             composable(
                 route = Routes.ADD_EDIT,
                 arguments = listOf(navArgument("tripId") {

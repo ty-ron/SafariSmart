@@ -157,7 +157,7 @@ fun InsightsScreen(
             Card(Modifier.fillMaxWidth()) {
                 Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
                     Text("Morning reminder", style = MaterialTheme.typography.titleMedium)
-                    Text("SafariSmart reminds you every morning at 7:00 about your fare budget.")
+                    Text("Choose your daily reminder time in Settings.")
                     OutlinedButton(onClick = {
                         WorkManager.getInstance(context)
                             .enqueue(OneTimeWorkRequestBuilder<ReminderWorker>().build())
